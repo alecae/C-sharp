@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,6 +26,10 @@ namespace C_Sharp
 
                 case 2:
                     Exo2();
+                    break;
+
+                case 3:
+                    Exo3();
                     break;
 
 
@@ -70,18 +75,29 @@ namespace C_Sharp
 
         public void Exo3()
         {
-            Console.WriteLine("Entrer votre note d'examen");
+            Random aleatoire = new Random();
+            int Nombrealeatoire = aleatoire.Next(101);
+
+            Console.WriteLine("Entrer un nombre");
             var nombre1 = Convert.ToInt32(Console.ReadLine());
 
-            if (nombre1 >= 60 && nombre1 <= 100)
+            do
             {
-                Console.WriteLine("Pass\n");
-            }
+                if(nombre1 != Nombrealeatoire)
+                {
+                    Console.WriteLine("Incorrect, try again.\n");
+                    Console.WriteLine("Entrer un nombre\n");
+                    nombre1 = Convert.ToInt32(Console.ReadLine());
+                }
 
-            else
-            {
-                Console.WriteLine("Fail\n");
+                else
+                {
+                    Console.WriteLine("Correct!");
+                }
             }
+            while (nombre1 != Nombrealeatoire);
+            Console.WriteLine("Correct!\n");
+
             Menu();
         }
     }
