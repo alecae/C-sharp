@@ -16,7 +16,7 @@ namespace ConsoleApp
         Septembre,
         Octobre,
         Novembre,
-        Decembre,
+        Decembre
     }
     internal static class Program
     {
