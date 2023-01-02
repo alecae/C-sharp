@@ -12,16 +12,22 @@ namespace C_Sharp
         public BaseAlgo() { }
         public void Menu()
         {
+            Console.WriteLine("Base Algo");
             Console.WriteLine("1.Plus grand des deux nombres");
             Console.WriteLine("2.Note examen");
             Console.WriteLine("3.Nombre aleatoire");
             Console.WriteLine("4.Table de multiplication");
-            Console.WriteLine("5.Produit de nombre");
+            Console.WriteLine("5.Produit de nombre\n");
+
+            Console.WriteLine("Loops Array ");
+            Console.WriteLine("6.Creation tableau ");
+            Console.WriteLine("7.Affiche 10 nombres ");
 
             var choix = Convert.ToInt32(Console.ReadLine());
 
             switch (choix)
             {
+
                 case 1:
                     Exo1();
                     break;
@@ -40,6 +46,14 @@ namespace C_Sharp
 
                 case 5:
                     Exo5();
+                    break;
+
+                case 6:
+                    Exo6();
+                    break;
+
+                case 7:
+                    Exo7();
                     break;
 
 
@@ -151,6 +165,41 @@ namespace C_Sharp
 
             Menu();
 
+        }
+
+        public void Exo6()
+        {
+            int[] Tableau = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+
+            foreach (var i in Tableau)
+            {
+                Console.WriteLine(i);
+               
+            }
+            Console.WriteLine();
+            Menu();
+        }
+
+        public void Exo7()
+        {
+            int[] Tableau = { };
+
+            var nombre = Convert.ToInt32(Console.ReadLine());
+
+            foreach (var i in Tableau)
+            {
+                Tableau.Append<int>(nombre);
+                nombre= Convert.ToInt32(Console.ReadLine());
+
+                if (Tableau.Length == 10)
+                {
+                    Console.WriteLine(Tableau[i]);
+                }
+
+            }
+            Console.WriteLine();
+            Menu();
         }
     }
 }
