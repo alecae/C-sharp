@@ -15,6 +15,7 @@ namespace C_Sharp
             Console.WriteLine("1.Plus grand des deux nombres");
             Console.WriteLine("2.Note examen");
             Console.WriteLine("3.Nombre aleatoire");
+            Console.WriteLine("4.Table de multiplication");
 
             var choix = Convert.ToInt32(Console.ReadLine());
 
@@ -31,6 +32,11 @@ namespace C_Sharp
                 case 3:
                     Exo3();
                     break;
+
+                case 4:
+                    Exo4();
+                    break;
+
 
 
             }
@@ -92,13 +98,25 @@ namespace C_Sharp
 
                 else
                 {
-                    Console.WriteLine("Correct!");
+                    Console.WriteLine("Correct!\n");
                 }
             }
             while (nombre1 != Nombrealeatoire);
             Console.WriteLine("Correct!\n");
 
             Menu();
+        }
+
+        public void Exo4()
+        {
+
+            Console.Write("Choisi un nombre: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            for (int j = 1; j <= 12; j++)
+            {
+                Console.Write("{0} X {1} = {2} \n", n, j, n * j);
+            }
         }
     }
 }
