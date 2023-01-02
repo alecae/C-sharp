@@ -16,6 +16,7 @@ namespace C_Sharp
             Console.WriteLine("2.Note examen");
             Console.WriteLine("3.Nombre aleatoire");
             Console.WriteLine("4.Table de multiplication");
+            Console.WriteLine("5.Produit de nombre");
 
             var choix = Convert.ToInt32(Console.ReadLine());
 
@@ -37,6 +38,9 @@ namespace C_Sharp
                     Exo4();
                     break;
 
+                case 5:
+                    Exo5();
+                    break;
 
 
             }
@@ -117,6 +121,36 @@ namespace C_Sharp
             {
                 Console.Write("{0} X {1} = {2} \n", n, j, n * j);
             }
+        }
+
+        public void Exo5()
+        {
+            Console.WriteLine("Entrer le 1er nombre");
+            var nombre1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Entrer le 2eme nombre");
+            var nombre2 = Convert.ToInt32(Console.ReadLine());
+
+            do
+            {
+                int nombre3 = nombre1 * nombre2;
+                Console.WriteLine(nombre3);
+                if (nombre3 <= 1000)
+                {
+                    Console.WriteLine("Produit inferieur a 1000!\n");
+                    Console.WriteLine("Entrer le 1er nombre\n");
+                    nombre1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Entrer le 2eme nombre\n");
+                    nombre2 = Convert.ToInt32(Console.ReadLine());
+
+                }
+
+            }
+            while (nombre1 * nombre2 < 1000);
+            Console.WriteLine("Produit superieur a 1000\n");
+
+            Menu();
+
         }
     }
 }
