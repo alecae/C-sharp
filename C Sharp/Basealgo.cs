@@ -26,6 +26,12 @@ namespace C_Sharp
 
             Console.WriteLine("Enum Constantes");
             Console.WriteLine("8.Jour de la semaines ");
+            Console.WriteLine("9.Jour vécu \n");
+
+            Console.WriteLine("Programmes");
+            Console.WriteLine("10.Annee jusqu'a 100 ans ");
+
+
 
             var choix = Convert.ToInt32(Console.ReadLine());
 
@@ -62,6 +68,10 @@ namespace C_Sharp
 
                 case 8:
                     Exo8();
+                    break;
+
+                case 9:
+                    Exo9();
                     break;
 
 
@@ -214,41 +224,41 @@ namespace C_Sharp
         public void Exo8()
         {
 
-                Console.WriteLine("Entrer un nombre entre 1 et 7");
-                var nombre1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Entrer un nombre entre 1 et 7");
+            var nombre1 = Convert.ToInt32(Console.ReadLine());
 
-                switch (nombre1)
-                {
-                    case 1:
-                        Console.WriteLine($"{Jour.Lundi}\n");
-                        break;
+            switch (nombre1)
+            {
+                case 1:
+                    Console.WriteLine($"{Jour.Lundi}\n");
+                    break;
 
-                    case 2:
-                        Console.WriteLine($"{Jour.Mardi}\n");
-                        break;
+                case 2:
+                    Console.WriteLine($"{Jour.Mardi}\n");
+                    break;
 
-                    case 3:
-                        Console.WriteLine($"{Jour.Mercredi}\n"  );
-                        break;
+                case 3:
+                    Console.WriteLine($"{Jour.Mercredi}\n");
+                    break;
 
-                    case 4:
-                        Console.WriteLine($"{Jour.Jeudi}\n");
-                        break;
+                case 4:
+                    Console.WriteLine($"{Jour.Jeudi}\n");
+                    break;
 
-                    case 5:
-                        Console.WriteLine($"{Jour.Vendredi}\n");
-                        break;
+                case 5:
+                    Console.WriteLine($"{Jour.Vendredi}\n");
+                    break;
 
-                    case 6:
-                        Console.WriteLine($"{Jour.Samedi}\n");
-                        break;
+                case 6:
+                    Console.WriteLine($"{Jour.Samedi}\n");
+                    break;
 
-                    case 7:
-                        Console.WriteLine($"{Jour.Dimanche}\n");
-                        break;
-                }
+                case 7:
+                    Console.WriteLine($"{Jour.Dimanche}\n");
+                    break;
+            }
 
-                Menu();
+            Menu();
 
         }
         enum Jour
@@ -262,5 +272,17 @@ namespace C_Sharp
             Dimanche
         }
 
+        public void Exo9()
+        {
+            const int annee = 365;
+
+            Console.WriteLine("Entrer votre age ");
+            var nombre1 = Convert.ToInt32(Console.ReadLine());
+
+            int jourvecu = nombre1 * annee;
+            Console.WriteLine($"Vous avez vécu {jourvecu} jours\n");
+
+            Menu();
+        }
     }
 }
