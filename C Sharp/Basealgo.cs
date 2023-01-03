@@ -21,7 +21,11 @@ namespace C_Sharp
 
             Console.WriteLine("Loops Array ");
             Console.WriteLine("6.Creation tableau ");
-            Console.WriteLine("7.Affiche 10 nombres ");
+            Console.WriteLine("7.Affiche 10 nombres \n");
+
+
+            Console.WriteLine("Enum Constantes");
+            Console.WriteLine("8.Jour de la semaines ");
 
             var choix = Convert.ToInt32(Console.ReadLine());
 
@@ -56,6 +60,10 @@ namespace C_Sharp
                     Exo7();
                     break;
 
+                case 8:
+                    Exo8();
+                    break;
+
 
             }
 
@@ -63,20 +71,21 @@ namespace C_Sharp
 
         public void Exo1()
         {
-           Console.WriteLine("Entrer le 1er nombre");
-           var nombre1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Entrer le 1er nombre");
+            var nombre1 = Convert.ToInt32(Console.ReadLine());
 
-           Console.WriteLine("Entrer le 2eme nombre");
-           var nombre2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Entrer le 2eme nombre");
+            var nombre2 = Convert.ToInt32(Console.ReadLine());
 
-           if (nombre1 > nombre2)
+            if (nombre1 > nombre2)
             {
                 Console.WriteLine($"Le nombre le plus grand est {nombre1}\n");
             }
-            else{
+            else
+            {
                 Console.WriteLine($"Le nombre le plus grand est {nombre2}\n");
             }
-           Menu();
+            Menu();
         }
 
 
@@ -85,11 +94,11 @@ namespace C_Sharp
             Console.WriteLine("Entrer votre note d'examen");
             var nombre1 = Convert.ToInt32(Console.ReadLine());
 
-            if (nombre1 >= 60 && nombre1<=100)
+            if (nombre1 >= 60 && nombre1 <= 100)
             {
                 Console.WriteLine("Pass\n");
             }
-           
+
             else
             {
                 Console.WriteLine("Fail\n");
@@ -107,7 +116,7 @@ namespace C_Sharp
 
             do
             {
-                if(nombre1 != Nombrealeatoire)
+                if (nombre1 != Nombrealeatoire)
                 {
                     Console.WriteLine("Incorrect, try again.\n");
                     Console.WriteLine("Entrer un nombre\n");
@@ -175,7 +184,7 @@ namespace C_Sharp
             foreach (var i in Tableau)
             {
                 Console.WriteLine(i);
-               
+
             }
             Console.WriteLine();
             Menu();
@@ -190,7 +199,7 @@ namespace C_Sharp
             foreach (var i in Tableau)
             {
                 Tableau.Append<int>(nombre);
-                nombre= Convert.ToInt32(Console.ReadLine());
+                nombre = Convert.ToInt32(Console.ReadLine());
 
                 if (Tableau.Length == 10)
                 {
@@ -201,5 +210,57 @@ namespace C_Sharp
             Console.WriteLine();
             Menu();
         }
+
+        public void Exo8()
+        {
+
+                Console.WriteLine("Entrer un nombre entre 1 et 7");
+                var nombre1 = Convert.ToInt32(Console.ReadLine());
+
+                switch (nombre1)
+                {
+                    case 1:
+                        Console.WriteLine($"{Jour.Lundi}\n");
+                        break;
+
+                    case 2:
+                        Console.WriteLine($"{Jour.Mardi}\n");
+                        break;
+
+                    case 3:
+                        Console.WriteLine($"{Jour.Mercredi}\n"  );
+                        break;
+
+                    case 4:
+                        Console.WriteLine($"{Jour.Jeudi}\n");
+                        break;
+
+                    case 5:
+                        Console.WriteLine($"{Jour.Vendredi}\n");
+                        break;
+
+                    case 6:
+                        Console.WriteLine($"{Jour.Samedi}\n");
+                        break;
+
+                    case 7:
+                        Console.WriteLine($"{Jour.Dimanche}\n");
+                        break;
+                }
+
+                Menu();
+
+        }
+        enum Jour
+        {
+            Lundi = 1,
+            Mardi,
+            Mercredi,
+            Jeudi,
+            Vendredi,
+            Samedi,
+            Dimanche
+        }
+
     }
 }
