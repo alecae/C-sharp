@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C_Sharp.Classes
 {
-    internal class Etudiant
+    public class Etudiant
     {
         string Nom ;
         string prenom ;

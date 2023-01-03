@@ -11,12 +11,12 @@ namespace C_Sharp.Classes
         string nomTitulaire = "";
         float sold;
 
-        public void Deposer(float sommeDepose)
+        public float Deposer(float sommeDepose)
         {
             return sold += sommeDepose;
         }
 
-        public void Retirer(float sommeRetirer)
+        public float Retirer(float sommeRetirer)
         {
             return sold -= sommeRetirer;
         }

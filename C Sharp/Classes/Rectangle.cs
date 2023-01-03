@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C_Sharp.Classes
 {
-    internal class Rectangle
+    public class Rectangle
     {
         float largeur;
         float hauteur;
