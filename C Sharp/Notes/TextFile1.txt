@@ -1,0 +1,66 @@
+﻿.Net  types
+
+types valeurs: déclare variables et affecter une valeur 
+
+types référence: contient une adresse mémoire dans laquelle est stocké une valeur 
+(Les données des types référence sont stockes a un emplacement mémoire et un pointeur vers ces données est stocke dans la variable.)
+
+Les classes et les interfaces sont des types référence. Un type référence doit être instancie avec le mot clé 'new'.
+
+
+
+Le CLR gère l'environnement d'exécution des applications, il permet de combiner des assemblages de codes, quel que soit le langage dans lequel ils ont été écrits. Une application en C sharp pourra utiliser une lib en VB (visual basic).
+
+Le compilateur est capable de convertir du code de différents langages en langage intermédiaire (IL).
+
+Chaque type des langages utilises pour le farmework .NET a son équivalent en langage intermédiaire.
+
+Une fois compile l'application se résume à un fichier exécutable au sein de l'environnement cible.
+
+
+
+Foreach:
+Parcourir et traité une structure de donnée
+
+Espace de nom:
+
+
+Constante: valeur qui change pas, une fois changer change de partout
+Ex: const int HeureParJour =24;
+
+
+
+
+CLASSES
+
+Public/ protected et private 
+
+On peut hérité d'une seul classe mais on peut avoir plusieurs interface  
+Les membres qui sont accessibles depuis la classe dérivée sont ceux qui ont un niveau d'accès: public / protected ou internal
+
+Si on déclare un membre de la classe de base avec le mot clef 'virtual' on autorise le membre a être surchargé au sein de la classe dérivée. Cela s'applique aux méthodes et aux propriétés
+
+
+Heritages:
+
+Public class Felin { //classe mere
+
+}
+Public class Tigre: Felin { classe fille 
+
+}
+
+
+Interfaces
+
+Les interface définissent un comportement pour les classes
+
+
+Interface IDanseur  { // i majuscules devant pour dire que c'est une interface 
+
+}
+
+Les membres de l'interface ne doivent pas déclarer de niveau d'accès
+
+//Plusieurs méthodes pareil mais les paramètres change = Surchage 
+
