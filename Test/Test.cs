@@ -16,10 +16,10 @@ namespace Snake
 
             var score = 5;
 
-            var tete = new Pixel(WindowWidth / 2, WindowHeight / 2, ConsoleColor.Red);
-            var pomme = new Pixel(rand.Next(1, WindowWidth - 2), rand.Next(1, WindowHeight - 2), ConsoleColor.Blue);
+            var head = new Pixel(WindowWidth / 2, WindowHeight / 2, ConsoleColor.Red);
+            var berry = new Pixel(rand.Next(1, WindowWidth - 2), rand.Next(1, WindowHeight - 2), ConsoleColor.Blue);
 
-            var corps = new List<Pixel>();
+            var body = new List<Pixel>();
 
             var currentMovement = Direction.Right;
 
@@ -29,20 +29,20 @@ namespace Snake
             {
                 Clear();
 
-                gameover |= (tete.XPos == WindowWidth - 1 || tete.XPos == 0 || tete.YPos == WindowHeight - 1 || tete.YPos == 0);
+                gameover |= (head.XPos == WindowWidth - 1 || head.XPos == 0 || head.YPos == WindowHeight - 1 || head.YPos == 0);
 
                 Border();
 
-                if (pomme.XPos == tete.XPos && pomme.YPos == tete.YPos)
+                if (berry.XPos == head.XPos && berry.YPos == head.YPos)
                 {
                     score++;
-                    pomme = new Pixel(rand.Next(1, WindowWidth - 2), rand.Next(1, WindowHeight - 2), ConsoleColor.Blue);
+                    berry = new Pixel(rand.Next(1, WindowWidth - 2), rand.Next(1, WindowHeight - 2), ConsoleColor.Blue);
                 }
 
-                for (int i = 0; i < corps.Count; i++)
+                for (int i = 0; i < body.Count; i++)
                 {
-                    DrawPixel(corps[i]);
-                    gameover |= (corps[i].XPos == tete.XPos && corps[i].YPos == tete.YPos);
+                    DrawPixel(body[i]);
+                    gameover |= (body[i].XPos == head.XPos && body[i].YPos == head.YPos);
                 }
 
                 if (gameover)
@@ -50,8 +50,8 @@ namespace Snake
                     break;
                 }
 
-                DrawPixel(tete);
-                DrawPixel(pomme);
+                DrawPixel(head);
+                DrawPixel(berry);
 
                 var sw = Stopwatch.StartNew();
                 while (sw.ElapsedMilliseconds <= 500)
@@ -59,27 +59,27 @@ namespace Snake
                     currentMovement = ReadMovement(currentMovement);
                 }
 
-                corps.Add(new Pixel(tete.XPos, tete.YPos, ConsoleColor.Green));
+                body.Add(new Pixel(head.XPos, head.YPos, ConsoleColor.Green));
 
                 switch (currentMovement)
                 {
                     case Direction.Up:
-                        tete.YPos--;
+                        head.YPos--;
                         break;
                     case Direction.Down:
-                        tete.YPos++;
+                        head.YPos++;
                         break;
                     case Direction.Left:
-                        tete.XPos--;
+                        head.XPos--;
                         break;
                     case Direction.Right:
-                        tete.XPos++;
+                        head.XPos++;
                         break;
                 }
 
-                if (corps.Count > score)
+                if (body.Count > score)
                 {
-                    corps.RemoveAt(0);
+                    body.RemoveAt(0);
                 }
             }
             SetCursorPosition(WindowWidth / 5, WindowHeight / 2);
@@ -88,31 +88,31 @@ namespace Snake
             ReadKey();
         }
 
-        static Direction ReadMovement(Direction mouvement)
+        static Direction ReadMovement(Direction movement)
         {
             if (KeyAvailable)
             {
                 var key = ReadKey(true).Key;
 
-                if (key == ConsoleKey.UpArrow && mouvement != Direction.Down)
+                if (key == ConsoleKey.UpArrow && movement != Direction.Down)
                 {
-                    mouvement = Direction.Up;
+                    movement = Direction.Up;
                 }
-                else if (key == ConsoleKey.DownArrow && mouvement != Direction.Up)
+                else if (key == ConsoleKey.DownArrow && movement != Direction.Up)
                 {
-                    mouvement = Direction.Down;
+                    movement = Direction.Down;
                 }
-                else if (key == ConsoleKey.LeftArrow && mouvement != Direction.Right)
+                else if (key == ConsoleKey.LeftArrow && movement != Direction.Right)
                 {
-                    mouvement = Direction.Left;
+                    movement = Direction.Left;
                 }
-                else if (key == ConsoleKey.RightArrow && mouvement != Direction.Left)
+                else if (key == ConsoleKey.RightArrow && movement != Direction.Left)
                 {
-                    mouvement = Direction.Right;
+                    movement = Direction.Right;
                 }
             }
 
-            return mouvement;
+            return movement;
         }
 
         static void DrawPixel(Pixel pixel)
