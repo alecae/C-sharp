@@ -18,6 +18,7 @@ namespace C_Sharp
             Console.WriteLine("3.Nombre aleatoire");
             Console.WriteLine("4.Table de multiplication");
             Console.WriteLine("5.Produit de nombre\n");
+            Console.WriteLine(@$"{@$"@${"bonjour"}"}");
 
             Console.WriteLine("Loops Array ");
             Console.WriteLine("6.Creation tableau ");

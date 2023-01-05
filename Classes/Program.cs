@@ -45,7 +45,8 @@
 //    }
 //}
 
-
+using C_Sharp.Classes;
+using TP2;
 
 namespace C_Sharp
 {
@@ -53,11 +54,14 @@ namespace C_Sharp
     {
         public static void Main(string[] args)
         {
-            var Menu = new BaseAlgo();
+            var lion = new Lion();
+            lion.nom = "Mufasa";
+            lion.poids = 325.0f;
+            lion.Description();
 
-            Menu.Menu();
-
-
+            var chat = new Chat();
+            chat.nom = "Miaouss";
+            chat.Description();
         }
 
     }
