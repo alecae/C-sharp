@@ -49,11 +49,11 @@ Public class Felin { //classe mere
 Public class Tigre: Felin { classe fille 
 
 }
-  
+
 
 Interfaces
 
-Les interface définissent un comportement pour les classesr
+Les interface définissent un comportement pour les classes
 
 
 Interface IDanseur  { // i majuscules devant pour dire que c'est une interface 
@@ -64,3 +64,6 @@ Les membres de l'interface ne doivent pas déclarer de niveau d'accès
 
 //Plusieurs méthodes pareil mais les paramètres change = Surchage 
 
+Sérialiser: transformer un objet en chaine de caractère
+
+? : test ci champ nul ou pas 
