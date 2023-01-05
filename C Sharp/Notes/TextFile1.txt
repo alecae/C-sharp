@@ -49,11 +49,11 @@ Public class Felin { //classe mere
 Public class Tigre: Felin { classe fille 
 
 }
-
+  
 
 Interfaces
 
-Les interface définissent un comportement pour les classes
+Les interface définissent un comportement pour les classesr
 
 
 Interface IDanseur  { // i majuscules devant pour dire que c'est une interface 
